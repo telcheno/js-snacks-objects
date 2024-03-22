@@ -62,3 +62,39 @@ const automobile =  [
 ]
 typeof automobile;
 console.log(automobile);
+
+//creo un array per ogni tipo di alimentazione
+
+const autoBenzina = [];
+const autoDisel = [];
+const altrAlimentazione = [];
+
+//creo ciclo per dividere le automobili pre l'alimentazione 
+
+for(let i = 0; i < automobile.length; i++){
+  let machina = automobile[i];//creo una variabile per accedere ai nomo e valori del oggeto
+  // console.log(machina.marca);
+
+  //scelgo le machine secondo l'alimentazione
+  //il valore del object va messa con le "virgollette"
+  if(machina.alimentazione === "benzina"){
+    autoBenzina.push(machina);
+  }else if(machina.alimentazione === "disel"){
+    autoDisel.push(machina);
+  }else{
+    altrAlimentazione.push(machina);
+  }
+  
+}
+console.log(autoBenzina);
+console.log(autoDisel);
+console.log(altrAlimentazione);
+
+//esempio come modello slides
+/**
+automobile.forEach(function(automobile) {
+  console.log(`
+  ${automobile.marca} modello: ${automobile.modello}
+  alimentazione: ${automobile.alimentazione}
+  `);
+});*/
