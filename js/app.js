@@ -136,30 +136,103 @@ const primoArray = ["pippo", "PLUTO", "Paperino"];
   { nome: ‘gallina’, famiglia: ‘fasianidi’, classe: ‘uccelli’ },] */
 
 const speci = [
-  {nome: "trota",famiglia: "salmonidi", clase: "pesci"},//object
-  {nome: "zabra", famiglia: "equini", clase: "mamifari"},//object
-  {nome: "fagiano", famiglia: "avicoli", clase: "avicoli"},//object
-  {nome: "tonno", famiglia: "scombridi", clase: "pesci"},//object
+  {nome: "trota",famiglia: "salmonidi", clase: "oviparo"},//object
+  {nome: "cane",famiglia: "canidi", clase: "mamiferi"},//object
+  {nome: "zabra", famiglia: "equini", clase: "mamiferi"},//object
+  {nome: "cavallo", famiglia: "equini", clase: "mamiferi"},//object
+  {nome: "fagiano", famiglia: "avicoli", clase: "oviparo"},//object
+  {nome: "tonno", famiglia: "scombridi", clase: "oviparo"},//object
   {nome: "delfini", famiglia: "delfinidi", clase: "mamiferi"},//object
-  {nome: "paernice", famiglia: "phasianidae", clase: "avicoli"},//object
+  {nome: "pernice", famiglia: "fasianidi", clase: "oviparo"},//object
   {nome: "cervo", famiglia: "cerviade", clase: "mamiferi"},//object
-  {nome: "quaglia", famiglia: "fasianidi", clase: "avicoli"},//object
+  {nome: "lupo", famiglia: "canidi", clase: "mamiferi"},//object
+  {nome: "quaglia", famiglia: "fasianidi", clase: "oviparo"},//object
 ];//array
 
 // console.log(animali, typeof animali);
 
 const claseMamiferi = [];//array
-const claseAnimali = [];//array
+const famigliaFasianidi = [];//array
+const famigliaCanidi = [];//array
 
 
 for (let i = 0; i < speci.length; i++){
-  const animale = speci[i];
-  // console.log(animale.clase);
+  const animaleCorrente = speci[i];
+  console.log(animaleCorrente.nome, animaleCorrente.clase);
 
-  if( animale.clase === "mamiferi"){
-    claseMamiferi.push(animale.clase);
+  if(animaleCorrente.clase === "mamiferi"){
+    claseMamiferi.push(animaleCorrente);
     }
+  if(animaleCorrente.famiglia === "fasianidi"){
+    famigliaFasianidi.push(animaleCorrente);
   }
-  console.log(claseMamiferi);
-  console.log(claseAnimali);
+  if(animaleCorrente.famiglia === "canidi"){
+    famigliaCanidi.push(animaleCorrente);
+  }
+}
+console.log(claseMamiferi);
+console.log(famigliaFasianidi);
+console.log(famigliaCanidi);
+
+
+/*---------------------
+  Js Snack Objects 4
+-----------------------*
+
+/*Crea un array di oggetti che rappresentano delle persone. Ogni persona ha un nome, un cognome e un’età. Crea quindi un nuovo array inserendo, per ogni persona, una frase con il nome e cognome e l’indicazione se può guidare, in base all’età
+*/
+
+const persone =[
+  {
+    nome:"Telmo",
+    cognome:"Checa",
+    eta:"50"
+  },
+  {
+    nome:"Diego",
+    cognome:"Checa",
+    eta:"12"
+  },
+  {
+    nome:"Veronica",
+    cognome:"Olivares",
+    eta:"52"
+  },
+  {
+    nome:"Roberta",
+    cognome:"Calderon",
+    eta:"16"
+  },
+  {
+    nome:"Sara",
+    cognome:"Acosta",
+    eta:"82"
+  },
+  {
+    nome:"Riccardo",
+    cognome:"Lovato",
+    eta:"13"
+  },
+]
+
+console.log(persone);
+const messagi = [];
+
+for(let i = 0; i < persone.length; i++){
+  const personaCorrente = persone[i];
+  // console.log(personaCorrente.nome,personaCorrente.eta);
+  const nome = personaCorrente.nome;
+  const cognome = personaCorrente.cognome;
+  const eta = personaCorrente.eta;
+  // console.log(nome, cognome, eta);
+
+  if(eta >= 18){
+    let messagio = nome + " " + cognome + " , che ha " + eta + " puo guidare"
+    console.log(messagio);
+  }else{
+    let messagio = nome + " " + cognome + " , che ha " + eta + " non puo guidare"
+    console.log(messagio);
+  }
   
+}
+messagi.push(messagio);
