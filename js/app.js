@@ -114,14 +114,35 @@ Es: [‘pippo’, ‘PLUTO’, ‘Paperino’] => [‘Pippo’, ‘Pluto’, ‘
 */
 
 //array originale
-const primoArray = ["pippo", "PLUTO", "Paperino"];
-// const nuovoArray = [];
+const primoArray = ["pippo", "minnie" , "PLUTO","TOPOLINO", "Paperino"];
+const nuovoArray = [];
+console.log(primoArray);
+
+for(let i = 0; i < primoArray.length; i++){
+
+  let stringaI = primoArray[i];
+  //il metodo toLowerCase() cambia i carateri in minuscolo
+  let controloI = primoArray[i].toLowerCase();
+
+  //il metodo slice(1) taglia la stringa a partire del indice indicato nel metodo
+  let sotoString = controloI.slice(1);
+
+  //il metodo toUpperCase() cambia i carateri in maiuscolo
+  let primaLetera = controloI[0].toUpperCase();
+  
+  let stringaMaiuscola = primaLetera + sotoString;
+
+  console.log(stringaMaiuscola);
+
+  nuovoArray.push(stringaMaiuscola);
+}
+console.log(nuovoArray);
 
 // primoArray.forEach(function(parola){
-// const controloParola = capitalize(controloParola);
-// nuovoArray.push(controloParola);
-// })
-// console.log(nuovoArray);
+  // const controloParola = capitalize(controloParola);
+  // nuovoArray.push(controloParola);
+  // })
+  // console.log(nuovoArray);
 
 
 /*---------------------
